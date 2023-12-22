@@ -1,16 +1,16 @@
 from datetime import date
 maior = qtdH = qtdM =0
-opc = 'S'
 print('-'*20)
 print('Cadastro de pessoa')
-while opc == 'S':
+while True:
     print('-'*20)
     anoN = int(input('Qual seu ano de nacimento? '))
     anoA = date.today().year
     idade = anoA - anoN
-    sexo = str(input('Qua seu sexo? [F/M')).upper().strip()[0]
+
+    sexo = ' '
     while sexo not in 'FM':
-        sexo = str(input('Qua seu sexo? [F/M')).upper().strip()[0]
+        sexo = str(input('Qual seu sexo? [F/M')).upper().strip()[0]
     if idade > 18:
         maior += 1
     if sexo == 'M':
@@ -18,9 +18,11 @@ while opc == 'S':
     if idade < 20 and sexo == 'F':
         qtdM += 1
 
-    opc = str(input('Deseja Continuar? [S/N')).upper().strip()[0]
+    opc = ' '
     while opc not in 'SN':
         opc = str(input('Deseja Continuar? [S/N')).upper().strip()[0]
+    if opc == 'N':
+        break
 print('-'*20)
 print(f'Total de pessoas com mais de 18 anos : {maior}')
 print(f'Ao todo temos {qtdH} homens cadastrados')
