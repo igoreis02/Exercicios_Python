@@ -13,12 +13,18 @@ while True:
     soma = computador + jogador
     if soma % 2 == 0:
         print(f'Você jogou {jogador} e o computador {computador}, Total {soma} deu Par')
-    if soma % 2 == 1:
+        if cond == 'P':
+            print('Você Ganhou')
+            qtd += 1
+        else:
+            print('Você perdeu')
+            break
+    elif soma % 2 == 1:
         print(f'Você jogou {jogador} e o computador {computador}, Total {soma} deu Impar')
-    if cond == 'P':
-        print('Você Ganhou')
-        qtd += 1
-    else:
-        print('Você perdeu')
-        break
+        if cond == 'I':
+            print('Você Ganhou')
+            qtd += 1
+        else:
+            print('Você perdeu')
+            break
 print(f'Game Over! Você venceu {qtd} vezes')
