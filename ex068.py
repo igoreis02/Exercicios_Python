@@ -6,9 +6,10 @@ print('-'*20)
 
 while True:
     jogador = int(input('Diga um valor: '))
-    cond = str(input('PAR OU IMPAR [P / I]')).upper().strip()[0]
-
     computador = randint(1, 10)
+    cond = str(input('PAR OU IMPAR [P / I]')).upper().strip()[0]
+    while cond not in 'PI':
+        cond = str(input('PAR OU IMPAR [P / I]')).upper().strip()[0]
     soma = computador + jogador
     if soma % 2 == 0:
         print(f'Você jogou {jogador} e o computador {computador}, Total {soma} deu Par')
